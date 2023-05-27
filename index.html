@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url(/wp2754115-assassin-creed-full-hd-wallpapers.jpg);
+            background-size: content;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            color: azure;
+        }
+        .wrapper{
+            width: 30vw;
+            border: 2px solid black;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.4);
+        }
+        input {
+            margin: 20px auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+        li {
+            margin: 5px auto 5px 20px;
+        }
+    </style>
+</head>
+<body>
+   <div class="wrapper">
+    <input type="text" name="" id="" placeholder="podaj nazwę">
+    <ul>
+        <li>Glendronach</li>
+        <li>Ardbeg</li>
+        <li>Clynelish</li>
+        <li>Singleton</li>
+        <li>Caol Ila</li>
+        <li>Aberlour </li>
+        <li>Glenfarclas</li>
+        <li>Auchentoshan</li>
+        <li>Balblair</li>
+        <li>Ardmore Legacy</li>
+        <li>Balvenie</li>
+        <li>Bowmore</li>
+        <li>Edradour Caledonia </li>
+        <li>Glen Moray</li>
+        <li>Kilkerran</li>
+        <li>Igni Single Malt </li>
+        <li>Talisker Port Ruighe</li>
+        <li>Chivas</li>
+        <li>Bunnahabhain</li>
+        <li>Floki</li>
+    </ul>
+   </div> 
+   <script>
+    const inputek = document.querySelector("input")
+    const elki = document.querySelectorAll("li")
+    const handleChange = () => {
+        elki.forEach(element => {
+            const match = new RegExp(inputek.value, 'i').test(element.textContent)
+            if(!match) {
+                element.style.display = 'none'
+            }
+            else{
+                element.style.display = "block"
+            }
+        })
+    }
+
+    inputek.addEventListener("keyup",handleChange)
+
+   </script>
+
+</body>
+
+</html>
